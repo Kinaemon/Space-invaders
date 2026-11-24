@@ -1,4 +1,4 @@
-#include "Renderrer.h"
+#include "Renderer.h"
 
 int main(){
     Renderer window;
@@ -6,6 +6,8 @@ int main(){
     window.draw(10, 5, 'a');
     window.draw(0,0,'b');
     window.draw(15,7,'C');
+    window.draw(25,25,'A');
+    window.display();
 
     while(true){};
 

@@ -1,4 +1,4 @@
-#include "Renderrer.h"
+#include "Renderer.h"
 #include <ncurses.h>
 
 Renderer::Renderer(){

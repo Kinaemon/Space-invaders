@@ -24,4 +24,5 @@ public:
     void playerShoot();
     void update();
     void removeDestroyedObj();
+    bool spawnWave(int rows, int cols, int spacingX, int spacingY);
 };

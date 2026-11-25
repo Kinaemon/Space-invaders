@@ -19,6 +19,7 @@ public:
 
     void destroy();
     void move(int dx, int dy);
+    bool isColliding(const GameObject& other) const;
 
     virtual void update(){};
 };
@@ -45,7 +46,7 @@ public:
 
 class Bullet : public GameObject{
 public:
-    Bullet(int pos_x, int pos_y) : GameObject(pos_x, pos_y, '|'){};
+    Bullet(int pos_x, int pos_y) : GameObject(pos_x, pos_y, '\|'){};
 
     void update() override;
 };

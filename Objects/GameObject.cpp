@@ -30,6 +30,10 @@ void GameObject::move(int dx, int dy){
     pos_y += dy;
 }
 
+bool GameObject::isColliding(const GameObject& other) const{
+    return (other.pos_x == pos_x && other.pos_y == pos_y);
+}
+
 int Player::get_hp() const{
     return health;
 }

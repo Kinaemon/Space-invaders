@@ -5,7 +5,7 @@
 
 class World{
 private:
-    int weight;
+    int width;
     int height;
 
     Player player;
@@ -13,11 +13,11 @@ private:
     std::vector<Bullet> bullets;
 public:
     World(int weight, int height):
-        weight(weight),
+        width(width),
         height(height),
-        player(Player(height + 1, weight / 2)){}
+        player(Player(width / 2, height - 1)){}
     ~World();
 
-    int getX() const;
-    int getY() const;
+    int getWidth() const;
+    int getHeight() const;
 };

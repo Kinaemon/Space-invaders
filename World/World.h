@@ -18,6 +18,6 @@ public:
         player(Player(height + 1, weight / 2)){}
     ~World();
 
-    int getX();
-    int getY();
+    int getX() const;
+    int getY() const;
 };

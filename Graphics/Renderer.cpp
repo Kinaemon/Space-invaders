@@ -6,6 +6,8 @@ Renderer::Renderer(){
     curs_set(0);
     cbreak();
     noecho();
+    keypad(stdscr, TRUE);
+    nodelay(stdscr, TRUE);
 }
 
 Renderer::~Renderer(){

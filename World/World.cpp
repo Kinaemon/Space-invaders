@@ -18,11 +18,23 @@ void World::playerShoot(){
     bullets.emplace_back(player.getX(), player.getY() - 1);
 }
 
+void World::removeDestroyedObj(){
+    auto lambda = [](const auto& arg){
+        return !arg.isAlive();
+    };
+
+    std::erase_if(bullets, lambda);
+    std::erase_if(enemies, lambda);
+}
+
 void World::update(){
     for (auto& bullet : bullets){
         bullet.update();
-        if (bullet.getY() < 0)
+        int Y = bullet.getY();
+        if (Y < 0 || Y >= height)
             bullet.destroy();
     }
     player.update();
+    removeDestroyedObj();
 }
+

@@ -34,6 +34,7 @@ void World::update(){
         if (Y < 0 || Y >= height)
             bullet.destroy();
     }
+    checkCollision();
     player.update();
     removeDestroyedObj();
 }
@@ -58,4 +59,30 @@ bool World::spawnWave(int rows, int cols, int spacingX, int spacingY){
         }
     }
     return true;
+}
+
+void World::checkCollision(){
+    for (auto& bullet : bullets){
+        if (!bullet.isAlive())
+            continue;
+        for (auto& enemy: enemies){
+            if (enemy.isAlive() && bullet.isColliding(enemy)){
+                bullet.destroy();
+                enemy.destroy();
+                break;
+            }
+        }
+    }
+}
+
+const Player& World::getPlayer() const{
+    return player;
+}
+
+const std::vector<Bullet>& World::getBullets() const{
+    return bullets;
+}
+
+const std::vector<Enemy>& World::getEnemies() const{
+    return enemies;
 }

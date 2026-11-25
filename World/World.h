@@ -11,6 +11,8 @@ private:
     Player player;
     std::vector<Enemy> enemies;
     std::vector<Bullet> bullets;
+
+    void checkCollision();
 public:
     World(int width, int height):
         width(width),
@@ -25,4 +27,8 @@ public:
     void update();
     void removeDestroyedObj();
     bool spawnWave(int rows, int cols, int spacingX, int spacingY);
+
+    const Player& getPlayer() const;
+    const std::vector<Bullet>& getBullets() const;
+    const std::vector<Enemy>& getEnemies() const;
 };

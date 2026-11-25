@@ -1,15 +1,8 @@
-#include "Renderer.h"
+#include "Game.h"
 
-int main(){
-    Renderer window;
-
-    window.draw(10, 5, 'a');
-    window.draw(0,0,'b');
-    window.draw(15,7,'C');
-    window.draw(25,25,'A');
-    window.display();
-
-    while(true){};
+int main() {
+    Game game;
+    game.run();
 
     return 0;
 }

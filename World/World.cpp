@@ -13,3 +13,16 @@ void World::playerMove(int dx){
     if (X < getWidth() && X >= 0)
         player.move(dx, 0);
 }
+
+void World::playerShoot(){
+    bullets.emplace_back(player.getX(), player.getY() - 1);
+}
+
+void World::update(){
+    for (auto& bullet : bullets){
+        bullet.update();
+        if (bullet.getY() < 0)
+            bullet.destroy();
+    }
+    player.update();
+}

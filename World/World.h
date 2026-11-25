@@ -21,4 +21,7 @@ public:
     int getHeight() const;
 
     void playerMove(int dx);
+    void playerShoot();
+    void update();
+    void removeDestroyedObj();
 };
